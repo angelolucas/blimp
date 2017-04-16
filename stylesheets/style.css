@@ -1,0 +1,98 @@
+* {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient(#2874CB, #9ADBFE);
+  cursor: -webkit-grab;
+}
+body:active {
+  cursor: -webkit-grabbing;
+}
+
+.blimp {
+  position: relative;
+  perspective: 800px;
+  width: 100vw;
+  height: 100vh;
+  min-width: 300px;
+  min-height: 300px;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Floor */
+.blimp__floor {
+  /*animation: rotate 8s linear 2s infinite;
+  -webkit-animation: rotate 8s linear 2s infinite;*/
+  transform: rotateX(70deg) rotateZ(-40deg);
+  width: 700px;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+/* Z line */
+.blimp__floor:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateX(90deg);
+  width: 1px;
+  background: blue;
+  height: 300px;
+  transform-origin: top;
+  pointer-events: none;
+}
+
+/* Coverage */
+.blimp__fuselage {
+  position: relative;
+  transform: rotateZ(90deg);
+  left: 0;
+  top: 50%;
+}
+
+/* Blimp Fuselage */
+.bf {
+  border: 1px solid transparent;
+  width: 30px;
+  height: 70px;
+  position: absolute;
+  left: -1px;
+}
+
+.bf--center {
+  background: rgba(0, 255, 0, 0.5);
+  transform: rotateY(-18deg) translateX(100%);
+  transform-origin: right center;
+  height: 180px;
+  top: -1px;
+}
+.bf--front {
+  background: rgba(255, 0, 0, 0.5);
+  transform: translateY(99%) rotateX(6deg);
+  transform-origin: top;
+  height: 40px;
+  bottom: -1px;
+}
+.bf--back {
+  background: rgba(0, 0, 255, 0.5);
+  transform: translateY(-99%) rotateX(-6deg);
+  transform-origin: bottom;
+  height: 40px;
+  top: -1px;
+}
+.bf--front.bf--end {
+  border-radius: 0 0 50% 50%;
+}
+.bf--back.bf--end {
+  border-radius: 50% 50% 0 0;
+}
