@@ -95,9 +95,9 @@ body:active {
   cursor: -webkit-grabbing;
 }
 
-/* Fuselage */
-.blimp__fuselage {
-  transform: rotateZ(90deg) translate3d(-50%, -50%, -95px);
+/* Envelope */
+.blimp__envelope {
+  transform: rotateZ(90deg) translate3d(-50%, -50%, -132px);
   left: 0;
   top: 0;
   width: 202px;
@@ -106,16 +106,18 @@ body:active {
   transform-origin: top left;
 }
 
-/* Blimp Fuselage */
-.bf {
+/* Blimp Envelope */
+.be {
   border: 1px solid transparent;
   width: 42px;
   height: 70px;
   position: absolute;
   left: -1px;
+  background: #cccccc !important;
+  box-shadow: inset 0 0 43px -11px #666;
 }
 
-.bf--center {
+.be--center {
   background: rgba(0, 255, 0, 0.5);
   transform: rotateY(-18deg) translateX(100%);
   transform-origin: right center;
@@ -123,7 +125,7 @@ body:active {
   top: -1px;
 }
 
-.bf--front {
+.be--front {
   background: rgba(255, 0, 0, 0.5);
   transform: translateY(99%) rotateX(3.9deg);
   transform-origin: top;
@@ -131,13 +133,13 @@ body:active {
   bottom: -1px;
 }
 
-.bf--front2 {
+.be--front2 {
   background: rgba(255, 255, 255, 0.5);
   transform: translateY(99%) rotateX(14.4deg);
   height: 48px;
 }
 
-.bf--back {
+.be--back {
   background: rgba(0, 0, 255, 0.5);
   transform: translateY(-99%) rotateX(-3.6deg);
   transform-origin: bottom;
@@ -145,22 +147,22 @@ body:active {
   top: -1px;
 }
 
-.bf--back2 {
+.be--back2 {
   background: rgba(255, 255, 255, 0.5);
   height: 30px;
   transform: translateY(-99%) rotateX(-20.3deg);
 }
 
-.bf--first {
+.be--first {
   left: 50%;
   top: 50%;
   transform: rotateY(0) translate(-50%, -50%);
 }
 
-.bf--front.bf--end {
+.be--front.be--end {
   clip-path: polygon(50% 100%, 50% 100%, 100% 0%, 0% 0);
 }
 
-.bf--back.bf--end {
+.be--back.be--end {
   clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
 }
