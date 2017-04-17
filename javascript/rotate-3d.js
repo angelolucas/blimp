@@ -1,12 +1,11 @@
 /*
-JS used only for camera rotation, key click event's and for appearance animation rerun
+JS used only for camera rotation, key click event's
 */
 $(document).ready(function() {
   
   var winW = $(window).width();
   var winH = $(window).height();
-  var $demo = $(".blimp__floor");
-  var $rerun = $(".rerun");
+  var $demo = $(".platform-3d__rotate");
   var rotation = {
     x: 70,
     z: -40
@@ -45,7 +44,7 @@ $(document).ready(function() {
       rotation.x += degY;
       rotation.z += degX;
       
-      $demo.css("transform", "rotateX("+rotation.x+"deg) rotateZ("+rotation.z+"deg)");
+      $demo.css("transform", "rotateX("+rotation.x+"deg) scale(1) rotateZ("+rotation.z+"deg)");
     });
     
     $(document).on("mouseup", function(e) {
@@ -55,24 +54,6 @@ $(document).ready(function() {
       prevValues.x = 0;
       prevValues.y = 0;
     });
-  });
-  
-  $(document).on("click", ".demo__panelKeys-key", function() {
-    $(this).removeClass("pressed");
-    $(this).css("top");
-    $(this).addClass("pressed");
-  });
-  
-  $(document).on("click", ".rerun", function() {
-    window.clearTimeout(timeout);
-    $(".demo__panelKeys-key").removeClass("pressed");
-    $demo.hide().removeClass("ready");
-    $demo.css("top");
-    $demo.show();
-    
-    timeout = setTimeout(function() {
-      $demo.addClass("ready");
-    }, 4400);
   });
   
   $(window).on("resize", function() {
