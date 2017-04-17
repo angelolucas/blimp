@@ -1,6 +1,6 @@
 .platform-3d {
   position: relative;
-  perspective: 800px;
+  @include perspective(800px);
   width: 100vw;
   height: 100vh;
   min-width: 300px;
@@ -15,9 +15,7 @@
 
 /* Floor */
 .platform-3d__rotate {
-  /*animation: rotate 8s linear 2s infinite;
-  -webkit-animation: rotate 8s linear 2s infinite;*/
-  transform: rotateX(70deg) rotateZ(-40deg);
+  transform: rotateX(70deg) rotateZ(45deg);
   width: 0;
   height: 0;
   margin: auto;

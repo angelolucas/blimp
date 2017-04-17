@@ -8,11 +8,11 @@ $(document).ready(function() {
   var $demo = $(".platform-3d__rotate");
   var rotation = {
     x: 70,
-    z: -40
+    z: 45
   };
   var prevValues = {
     x: 70,
-    y: -40
+    y: 45
   };
   var rotationActive = false;
   var startAnimTime = 5400;
@@ -44,7 +44,7 @@ $(document).ready(function() {
       rotation.x += degY;
       rotation.z += degX;
       
-      $demo.css("transform", "rotateX("+rotation.x+"deg) scale(1) rotateZ("+rotation.z+"deg)");
+      $demo.css("transform", "rotateX("+rotation.x+"deg) rotateZ("+rotation.z+"deg)");
     });
     
     $(document).on("mouseup", function(e) {

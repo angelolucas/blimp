@@ -1,71 +1,15 @@
-/* line 5, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 22, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
-}
-
-/* line 24, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
-}
-
-/* line 1, ../sass/_3d-platform.scss */
 .platform-3d {
   position: relative;
+  -moz-perspective: 800px;
+  -webkit-perspective: 800px;
   perspective: 800px;
   width: 100vw;
   height: 100vh;
@@ -74,17 +18,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: flex;
   overflow: hidden;
 }
-/* line 11, ../sass/_3d-platform.scss */
 .platform-3d * {
   transform-style: preserve-3d;
 }
 
 /* Floor */
-/* line 17, ../sass/_3d-platform.scss */
 .platform-3d__rotate {
-  /*animation: rotate 8s linear 2s infinite;
-  -webkit-animation: rotate 8s linear 2s infinite;*/
-  transform: rotateX(70deg) rotateZ(-40deg);
+  transform: rotateX(70deg) rotateZ(45deg);
   width: 0;
   height: 0;
   margin: auto;
@@ -94,7 +34,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* X Y Z Axis */
-/* line 31, ../sass/_3d-platform.scss */
 .platform-3d__axis {
   position: absolute;
   left: 0;
@@ -107,7 +46,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform-origin: top;
 }
 
-/* line 42, ../sass/_3d-platform.scss */
 .platform-3d__axis:after {
   content: "";
   position: absolute;
@@ -120,55 +58,46 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* X Axis */
-/* line 54, ../sass/_3d-platform.scss */
 .platform-3d__x-axis {
   transform: rotateZ(-90deg);
   border-color: red;
 }
 
-/* line 58, ../sass/_3d-platform.scss */
 .platform-3d__x-axis:after {
   border-color: red;
 }
 
 /* Y Axis */
-/* line 63, ../sass/_3d-platform.scss */
 .platform-3d__y-axis {
   border-color: green;
 }
 
-/* line 66, ../sass/_3d-platform.scss */
 .platform-3d__y-axis:after {
   border-color: green;
 }
 
 /* Z Axis */
-/* line 71, ../sass/_3d-platform.scss */
 .platform-3d__z-axis {
   transform: rotateX(90deg);
   border-color: blue;
 }
 
-/* line 75, ../sass/_3d-platform.scss */
 .platform-3d__z-axis:after {
   border-color: blue;
 }
 
-/* line 1, ../sass/_blimp.scss */
 body {
-  background: linear-gradient(#2874CB, #9ADBFE);
+  background: linear-gradient(#2874cb, #9adbfe);
   cursor: -webkit-grab;
 }
 
-/* line 5, ../sass/_blimp.scss */
 body:active {
   cursor: -webkit-grabbing;
 }
 
 /* Fuselage */
-/* line 11, ../sass/_blimp.scss */
 .blimp__fuselage {
-  transform: rotateZ(90deg) translate(-50%, -50%);
+  transform: rotateZ(90deg) translate3d(-50%, -50%, -100px);
   left: 0;
   top: 0;
   width: 202px;
@@ -178,7 +107,6 @@ body:active {
 }
 
 /* Blimp Fuselage */
-/* line 22, ../sass/_blimp.scss */
 .bf {
   border: 1px solid transparent;
   width: 30px;
@@ -187,7 +115,6 @@ body:active {
   left: -1px;
 }
 
-/* line 29, ../sass/_blimp.scss */
 .bf--center {
   background: rgba(0, 255, 0, 0.5);
   transform: rotateY(-18deg) translateX(100%);
@@ -196,7 +123,6 @@ body:active {
   top: -1px;
 }
 
-/* line 36, ../sass/_blimp.scss */
 .bf--front {
   background: rgba(255, 0, 0, 0.5);
   transform: translateY(99%) rotateX(6deg);
@@ -205,7 +131,6 @@ body:active {
   bottom: -1px;
 }
 
-/* line 43, ../sass/_blimp.scss */
 .bf--back {
   background: rgba(0, 0, 255, 0.5);
   transform: translateY(-99%) rotateX(-6deg);
@@ -214,12 +139,16 @@ body:active {
   top: -1px;
 }
 
-/* line 50, ../sass/_blimp.scss */
+.bf--first {
+  left: 50%;
+  top: 50%;
+  transform: rotateY(0) translate(-50%, -50%);
+}
+
 .bf--front.bf--end {
   border-radius: 0 0 50% 50%;
 }
 
-/* line 53, ../sass/_blimp.scss */
 .bf--back.bf--end {
   border-radius: 50% 50% 0 0;
 }
