@@ -6,6 +6,15 @@
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(#2874cb, #9adbfe);
+  cursor: -webkit-grab;
+}
+
+body:active {
+  cursor: -webkit-grabbing;
+}
+
 .platform-3d {
   position: relative;
   -moz-perspective: 800px;
@@ -24,7 +33,8 @@
 
 /* Floor */
 .platform-3d__rotate {
-  transform: rotateX(70deg) rotateZ(45deg);
+  will-change: transform;
+  transform: rotateX(70deg) rotateZ(45deg) translateZ(0);
   width: 0;
   height: 0;
   margin: auto;
@@ -86,15 +96,6 @@
   border-color: blue;
 }
 
-body {
-  background: linear-gradient(#2874cb, #9adbfe);
-  cursor: -webkit-grab;
-}
-
-body:active {
-  cursor: -webkit-grabbing;
-}
-
 /* Envelope */
 .blimp__envelope {
   transform: rotateZ(90deg) translate3d(-50%, -50%, -132px);
@@ -106,7 +107,6 @@ body:active {
   transform-origin: top left;
 }
 
-/* Blimp Envelope */
 .be {
   border: 1px solid transparent;
   width: 42px;
@@ -165,4 +165,29 @@ body:active {
 
 .be--back.be--end {
   clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
+}
+
+.blimp__tail-wheel {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform: translateY(520px) rotateX(90deg);
+  transform-origin: center top;
+}
+
+.btw {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  transform: translateY(99%);
+  background: red;
+}
+
+.btw--folding {
+  transform: translateY(99%) rotateX(60deg);
+  transform-origin: top;
+}
+
+.btw--border {
+  position: absolute;
 }

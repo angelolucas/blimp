@@ -1,3 +1,12 @@
+body {
+  background: linear-gradient(#2874CB, #9ADBFE);
+  cursor: -webkit-grab;
+}
+body:active {
+  cursor: -webkit-grabbing;
+}
+
+
 .platform-3d {
   position: relative;
   @include perspective(800px);
@@ -15,7 +24,8 @@
 
 /* Floor */
 .platform-3d__rotate {
-  transform: rotateX(70deg) rotateZ(45deg);
+  will-change: transform;
+  transform: rotateX(70deg) rotateZ(45deg) translateZ(0);
   width: 0;
   height: 0;
   margin: auto;
